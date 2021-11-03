@@ -7,6 +7,7 @@ object Hello extends App {
     _ <- putStrLn("Hello, what is you name?")
     name <- getStrLn
     _ <- putStrLn(s"Hello $name, welcome to ZIO!")
+    _ <- putStrLn(s"Oh and 1 + 2 = ${Calculator.add(1, 2)}")
   } yield ()
 
   override def run(args: List[String]) = program.exitCode
