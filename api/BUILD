@@ -6,7 +6,7 @@ scala_image(
   visibility = ["//visibility:public"],
   main_class = "Hello",
   deps = [
-    "@maven//:dev_zio_zio_2_12",
+    "@maven//:dev_zio_zio_2_13",
     "//services"
   ]
 )

@@ -7,8 +7,24 @@ A proof of concept to see if bazel is a feasbile replacement for sbt
 - [x] Build docker image
 - [x] Split up the project in multiple modules
 - [x] Add dependency zio
-- [ ] Run a test using zio-test
+- [x] Run a test using zio-test
 - [ ] Use twirl templates
-- [ ] IDEA integration
+- [x] IDEA integration
 - [ ] Build as Scala 3.x
 - [ ] Code coverage
+
+## Notes
+
+### Docker publish
+
+Run `bazel run :bazel-scala-test`
+
+Set `respoitory` to `:org/:name`
+
+### Testing
+
+Run `bazel test //services:services_test`
+
+### Run API
+
+Run `bazel run //api:api`

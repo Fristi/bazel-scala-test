@@ -94,7 +94,11 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "dev.zio:zio_2.12:1.0.12"
+        "junit:junit:4.13.2",
+        "org.scala-lang:scala-library:2.13.6",
+        "dev.zio:zio_2.13:1.0.12",
+        "dev.zio:zio-test_2.13:1.0.12",
+        "dev.zio:zio-test-junit_2.13:1.0.12",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
