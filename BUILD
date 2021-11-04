@@ -5,5 +5,6 @@ container_push(
    image = "//api",
    format = "Docker",
    registry = "index.docker.io",
-   repository = "markdj/bazel-scala-test"
+   repository = "markdj/bazel-scala-test",
+   tag = "{STABLE_TAG}"
 )
