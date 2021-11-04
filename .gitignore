@@ -5,3 +5,4 @@ bazel-*
 .idea
 .metals
 .vscode
+twirl_install.json

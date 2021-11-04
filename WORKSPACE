@@ -80,6 +80,7 @@ load(
 
 _scala_image_repos()
 
+
 RULES_JVM_EXTERNAL_TAG = "4.1"
 RULES_JVM_EXTERNAL_SHA = "f36441aa876c4f6427bfb2d1f2d723b48e9d930b62662bf723ddfb8fc80f0140"
 
@@ -92,6 +93,7 @@ http_archive(
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
+# ATTENTION: Transitive dependencies need to be explicitly added
 maven_install(
     artifacts = [
         "junit:junit:4.13.2",
@@ -99,8 +101,25 @@ maven_install(
         "dev.zio:zio_2.13:1.0.12",
         "dev.zio:zio-test_2.13:1.0.12",
         "dev.zio:zio-test-junit_2.13:1.0.12",
+        "com.typesafe.play:twirl-api_2.13:1.5.1",
+        "org.scala-lang.modules:scala-xml_2.13:2.0.1"
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
 )
+
+# update version as needed
+rules_twirl_version = "9ac789845e3a481fe520af57bd47a4261edb684f"
+http_archive(
+  name = "io_bazel_rules_twirl",
+  sha256 = "b1698a2a59b76dc9df233314c2a1ca8cee4a0477665cff5eafd36f92057b2044",
+  strip_prefix = "rules_twirl-{}".format(rules_twirl_version),
+  type = "zip",
+  url = "https://github.com/lucidsoftware/rules_twirl/archive/{}.zip".format(rules_twirl_version),
+)
+
+load("@io_bazel_rules_twirl//:workspace.bzl", "twirl_repositories")
+twirl_repositories()
+load("@twirl//:defs.bzl", twirl_pinned_maven_install = "pinned_maven_install")
+twirl_pinned_maven_install()
