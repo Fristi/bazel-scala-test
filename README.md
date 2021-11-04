@@ -12,7 +12,7 @@ A proof of concept to see if bazel is a feasbile replacement for sbt
 - [x] IDEA integration (https://ij.bazel.build/)
 - [x] Metals integration
 - [ ] Build as Scala 3.x (work in progress: https://github.com/bazelbuild/rules_scala/issues/1269)
-- [ ] Dependency updates
+- [ ] Dependency updates (work in progress: https://github.com/google/bazel-common/issues/65)
 - [x] Code coverage
 
 ## Notes
