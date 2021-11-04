@@ -96,7 +96,6 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 # ATTENTION: Transitive dependencies need to be explicitly added
 maven_install(
     artifacts = [
-        "junit:junit:4.13.2",
         "org.scala-lang:scala-library:2.13.6",
         "dev.zio:zio_2.13:1.0.12",
         "dev.zio:zio-test_2.13:1.0.12",
