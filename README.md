@@ -8,7 +8,7 @@ A proof of concept to see if bazel is a feasbile replacement for sbt
 - [x] Split up the project in multiple modules
 - [x] Add dependency zio
 - [x] Run a test using zio-test
-- [ ] Use twirl templates
+- [x] Use twirl templates
 - [x] IDEA integration ()
 - [ ] Build as Scala 3.x
 - [ ] Dependency updates
